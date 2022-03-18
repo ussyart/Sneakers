@@ -1,0 +1,472 @@
+html {
+  margin:0;
+  padding:0;
+}
+
+body {
+  margin:0;
+  padding:0;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+.fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration:2s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime{
+from {
+    opacity: 0;
+    transform: translateY(100px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+/*========= LoadingのためのCSS ===============*/
+
+/* Loading背景画面設定　*/
+
+#splash {
+    /*fixedで全面に固定*/
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	background:#333;
+	text-align:center;
+	color:#fff;
+}
+
+/* Loadingバー中央配置　*/
+#splash_text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    z-index: 999;
+	width: 100%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+}
+
+
+/* ロゴ「Sneakers」　*/
+.text-sneakers {
+  font-family: 'Roboto', sans-serif;
+  font-size:40px;
+  margin:12px 0 0 45px;
+  letter-spacing: 3px;
+}
+
+/* ロゴ「Sneakers」の「S」の指定。　*/
+.text-sneakers span {
+  font-size:50px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ヘッダー部分のロゴとハンバーガーメニューの設定　*/
+header {
+  display:flex;
+  justify-content: space-between;/* 両端揃えにする　*/
+  z-index: 100;
+  height: 90px;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+}
+
+/* ハンバーガーメニュー　*/
+.openbtn {
+  justify-content: right;
+  margin-top:18px;
+}
+
+/*==================================================
+　5-2-8 3本線が横方向に回転して×に
+===================================*/
+
+/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+.openbtn{
+	/*ボタン内側の基点となるためrelativeを指定。
+追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
+  margin-right: 2%;
+	position: relative;
+  background:black;
+	cursor: pointer;
+    width: 50px;/*オレンジ（色指定してない時は白）の枠線の大きさを指定*/
+    height:50px;
+	border-radius: 5px;
+  z-index: 9999;/*ボタンを最前面に*/
+}
+
+/*ボタン内側*/
+.openbtn .openbtn-area{
+    transition: all .6s;/*アニメーションの設定*/
+	width:50px;
+	height:50px;
+}
+
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background: white;
+  	width: 45%;/*3本線の長さ（元45%）*/
+  }
+
+.openbtn span:nth-of-type(1) {
+	top:15px;
+}
+
+.openbtn span:nth-of-type(2) {
+	top:23px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:31px;
+}
+
+/*activeクラスが付与されると .openbtn-areaが360度回転し、その中の線が回転して×に*/
+.openbtn.active .openbtn-area{
+	transform: rotate(360deg);
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+
+/*ハンバーガーメニューをクリックした時に出るメニュー画面の設定*/
+
+#g-nav{
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position:fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+	top:0;
+    left: -120%;
+	width:100%;
+    height: 100vh;/*ナビの高さ*/
+	background:#999;
+    /*動き*/
+	transition: all 0.6s;
+  opacity: 0.9;
+  font-family：'Noto Sans JP'、sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nemu-name li{
+  margin-left: -27%;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
+    left: 0;
+}
+
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999;
+    width:100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+	list-style: none;
+    text-align: center;
+}
+
+#g-nav li a{
+	color: #333;
+	text-decoration: none;
+	padding:10px;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+}
+
+/* ムービー（スニーカーで階段を上る動画）の設定*/
+video {
+  width:100%;
+  height:800px;
+  object-fit:cover;
+}
+
+/* テキスト「PICK UP」*/
+.text-pickup {
+  text-align: center;
+  margin-top:100px;
+  font-size:37px;
+  font-family：'Noto Sans JP'、sans-serif;
+  font-weight: bold;
+}
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+   width:94%;
+    margin:0 auto;
+    padding-right: 40px;
+}
+
+.slider img {
+    width:100%;/*スライダー内の画像を横幅100%に*/
+    height:auto;
+}
+
+/*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+
+.slider .slick-slide {
+    margin:0 10px;
+}
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーション（スライドショー）の設定*/
+
+.slick-dots {
+    text-align:center;
+	margin:20px 0 0 0;
+}
+
+.slick-dots li {
+    display:inline-block;
+	margin:0 5px;
+}
+
+/* テキスト「FEATURE」*/
+.text-feature {
+  font-size:37px;
+  margin-top:100px;
+  text-align: center;
+  font-family：'Noto Sans JP'、sans-serif;
+  font-weight: bold;
+}
+
+/* コンテンツエリアの大きさを設定*/
+.contents {
+  display:flex;
+  width:90%;
+  margin:0 auto;
+}
+
+/* 横並びの３つのコンテンツ*/
+.contents1 {
+  width:30%;
+  height: 30vw;
+  margin:0 auto;
+  box-shadow: 0 0 8px gray; /* コンテンツに影をつける*/
+}
+
+/* 横並びの３つのコンテンツの写真*/
+.contents1 img {
+  width:100%;
+}
+
+/* テキスト「category」*/
+.text-category {
+  font-size:13px;
+  margin-left:20px;
+  margin-top:25px;
+  color:#404040;
+  font-family：'Noto Sans JP'、sans-serif;
+  font-weight: bold;
+}
+
+/* テキスト「テキストテキスト...」*/
+.text-text {
+  font-size:15px;
+  font-weight: bold;
+  margin:10px 25px;
+  font-family：'Noto Sans JP'、sans-serif;
+  font-weight: bold;
+}
+
+/* テキスト「XXXX.XX.XX」*/
+.text-x {
+  font-size:13px;
+  color:#404040;
+  display: flex;
+  justify-content: flex-end; /* 右寄せにする記述　display:flex;とセットで使う*/
+  margin:5% 10% 5% 0;
+  font-family：'Noto Sans JP'、sans-serif;
+  font-weight: bold;
+}
+
+/* コンテンツ 2列目*/
+.contents-2nd {
+  display:flex;
+  width:90%;
+  margin:0 auto;
+  margin-top:30px;
+}
+
+/* コンテンツ 3列目*/
+.contents-3rd {
+  display:flex;
+  width:90%;
+  margin:0 auto;
+  margin-top:30px;
+}
+
+/* フッター部分の設定（濃いグレーの背景部分）*/
+footer {
+  background-color: #161616;
+  height: 610px;
+  margin-top:50px;
+  overflow-y: hidden;
+}
+
+/* テキスト「CONTACT」*/
+.text-contact {
+  text-align: center;
+  color:white;
+  font-size:35px;
+  padding-top:60px;
+  font-family：'Noto Sans JP'、sans-serif;
+  font-weight: bold;
+}
+
+/* 「テキストテキスト...」のエリア範囲を指定*/
+.text-alia {
+  width:41%;
+  margin-left:80px;
+  margin-top:30px;
+  list-style: none;
+}
+
+/* 「テキストテキスト...」の文字*/
+.text-taxt-white {
+  color:white;
+  padding-bottom: 30px;
+  font-family：'Noto Sans JP'、sans-serif;
+}
+
+/* 「name mail massage」のエリア範囲指定*/
+.text-alia2 {
+  width:40%;
+  margin-right: 120px;
+  margin-top:10px;
+  list-style: none;
+}
+
+/* 「「テキストテキスト...」「name mail massage」を横並びにするための指定*/
+.text-alia-all {
+  display: flex;
+  justify-content: space-between;/* 両端揃えにする　*/
+}
+
+/* テキスト「name mail massage」の指定*/
+.text-taxt-white2 {
+  color:white;
+  font-family：'Noto Sans JP'、sans-serif;
+  font-weight: bold;
+}
+
+/* 文字を入力する蘭の指定*/
+input {
+  width: 100%;
+  height: 50px
+}
+
+/* 送信ボタン「SEND」のエリア範囲指定*/
+.input-buttan {
+  margin-top:20px;
+  width:40%;
+}
+
+/* 送信ボタン「SEND」*/
+.input-buttan input {
+  background-color:#161616;
+  color:white;
+  border:1px solid white;
+  font-family：'Noto Sans JP'、sans-serif;
+  font-weight: bold;
+}
+
+/* 送信ボタン「SEND」にカーソルを乗せた時のアクション*/
+.input-buttan :hover {
+  background-color:white;
+  color:#161616;
+  cursor: pointer;
+}
+
+/* 一番最後のロゴ（著作権）*/
+.c {
+  text-align: center;
+  color:white;
+  font-size:10px;
+  margin-top:15px;
+  font-family：'Noto Sans JP'、sans-serif;
+}
+
+.fadeUpTrigger{
+opacity: 0;
+}

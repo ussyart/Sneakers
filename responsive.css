@@ -1,0 +1,116 @@
+/* ブレイクポイントが1250px以下のときのメディアクエリを設定*/
+@media (max-width:1250px) {
+
+  .text-x {
+    margin-top:-5px;
+  }
+}
+
+/* ブレイクポイントが1110px以下のときのメディアクエリを設定*/
+@media (max-width:1110px) {
+
+  .contents1 {
+    height:50%;
+  }
+}
+
+/* ブレイクポイントが970px以下のときのメディアクエリを設定*/
+@media (max-width:970px) {
+
+  /* フッター部分の設定（濃いグレーの背景部分）*/
+  footer {
+    height: 50%;
+  }
+}
+
+/* ブレイクポイントが800px以下のときのメディアクエリを設定*/
+@media (max-width:800px) {
+
+  /* 「テキストテキスト...」のエリア範囲を指定*/
+  .text-alia {
+    margin-left:1%;
+    width:50%;
+  }
+
+  /* 「name mail massage」のエリア範囲指定*/
+  .text-alia2 {
+    margin-right: 2%;
+    width:50%;
+  }
+}
+
+/* ブレイクポイントが930px以下のときのメディアクエリを設定*/
+@media (max-width:620px) {
+
+  /* テキスト「PICK UP」*/
+  .text-pickup {
+    font-size:25px;
+  }
+
+  /* テキスト「FEATURE」*/
+  .text-feature {
+    font-size:25px;
+  }
+
+  /* 3つ横並びのコンテンツを縦１列に並べる（１列目）*/
+  .contents {
+    display: block;
+  }
+
+/* 3つ横並びのコンテンツを縦１列に並べる（１列目）*/
+  .contents1  {
+    width:90%;
+    margin-bottom:10%;
+  }
+
+  /* ３つ横並びのコンテンツを縦１列に並べる（２列目）*/
+  .contents-2nd {
+    display:block;
+    margin-bottom:10%;
+  }
+
+  /* ３つ横並びのコンテンツを縦１列に並べる（3列目）*/
+  .contents-3rd {
+    display:block;
+    margin-bottom:10%;
+  }
+}
+
+/* ブレイクポイントが600px以下のときのメディアクエリを設定*/
+@media (max-width:600px) {
+
+  /* 「テキストテキスト...」のエリア範囲を指定*/
+  .text-alia {
+    width:95%;
+  }
+
+  /* 「テキストテキスト...」の文字*/
+  .text-taxt-white {
+    margin:0 auto;
+    margin-right: 5.2%;
+  }
+
+  /* 「name mail massage」のエリア範囲指定*/
+  .text-alia2 {
+    width:95%;
+  }
+
+  /* テキスト「name mail massage」の指定*/
+  .text-taxt-white2 {
+    margin-right: 5.2%;
+  }
+
+  /* 「「テキストテキスト...」「name mail massage」を横並びにするための指定*/
+  .text-alia-all {
+    display: block;
+  }
+}
+
+/* ブレイクポイントが500px以下のときのメディアクエリを設定*/
+@media (max-width:500px) {
+
+  /* ロゴ「Sneakers」　*/
+  .text-sneakers {
+    margin-left:5%;
+  }
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- viewport（レスポンシブを可能にするシステム）を読み込むための<meta>タグを記述 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サンプル靴ショップ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!--Googlefonts"Roboto"を使用可能にする-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Shippori+Mincho:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!--Googlefonts"Noto Sans Japanese"を使用可能にする-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- スライドを作るためのcss-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <!-- 自作cssを読み込み -->
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <!-- 自作responsive.css（レスポンシブ コード）を読み込むための記述 -->
+    <link rel="stylesheet" href="responsive.css">
+    <!-- jqueryを使えるように設定 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Loading背景画面 -->
+    <div id="splash">
+      <div id="splash_text"></div><!-- Loadingバー Loadingカウント数字 -->
+    </div><!--/splash-->
+
+    <div id="settimeout"><!-- Loading画面終了後に表示させる -->
+
+      <header><!--ヘッダー -->
+
+        <!--ロゴ「Sneakers」 -->
+        <h1 class="text-sneakers"><span>S</span>neakers</h1>
+
+        <!--ハンバーガーメニュー -->
+        <div class="openbtn"><div class="openbtn-area"><span></span><span></span><span></span></div></div>
+
+        <!--ハンバーガーメニューをクリックした時に出るメニュー -->
+        <nav id="g-nav">
+            <ul class="nemu-name">
+              <li><a href="#">Top</a></li>
+              <li><a href="#jump-pickup">PICK UP</a></li>
+              <li><a href="#jump-feature">FEATURE</a></li>
+              <li><a href="#jump-contact">CONTACT</a></li>
+            </ul>
+        </nav><!--ハンバーガーメニューをクリックした時に出るメニュー ここまで-->
+
+      </header><!-- /header -->
+
+      <main>　<!-- メイン（動画〜コンテンツまで） -->
+
+　　　　　<!-- トップ画面の動画 -->
+        <video src="https://code-step.com/demo/html/media/video/video.mp4" alt="スニーカー" loop autoplay muted playsinline>
+        </video>
+
+　　　　　<!-- テキスト「PICK UP」 -->
+        <h1 class="text-pickup"id="jump-pickup">PICK UP</h1>
+
+        <!-- 自動スライド画像 -->
+        <ul class="slider">
+          <li><img src="https://code-step.com/demo/html/media/img/pickup7.jpg" alt="アメリカンシューズ"></li>
+          <li><img src="https://code-step.com/demo/html/media/img/pickup8.jpg" alt="ハートシューズ"></li>
+          <li><img src="https://code-step.com/demo/html/media/img/pickup9.jpg" alt="ナイキシューズ"></li>
+          <li><img src="https://code-step.com/demo/html/media/img/pickup1.jpg" alt="ブルーシューズ"></li>
+          <li><img src="https://code-step.com/demo/html/media/img/pickup2.jpg" alt="シューズ"></li>
+          <li><img src="https://code-step.com/demo/html/media/img/pickup3.jpg" alt="シューズラインナップ"></li>
+          <li><img src="https://code-step.com/demo/html/media/img/pickup4.jpg" alt="SPLY58"></li>
+          <li><img src="https://code-step.com/demo/html/media/img/pickup5.jpg" alt="レッドシューズ"></li>
+          <li><img src="https://code-step.com/demo/html/media/img/pickup6.jpg" alt="イエロースパイク"></li>
+        </ul><!-- 自動スライド画像 ここまで-->
+
+        <!--クラスに「fadeInUpTrigger」をつける事で、スクロール時にふわっと表示させる-->
+        <h1 class="text-feature" id="jump-feature">FEATURE</h1>
+
+
+        <!-- コンテンツ １列目--> <!--クラスに「fadeInUpTrigger」をつける事で、スクロール時にふわっと表示させる-->
+        <div class="contents">
+
+          <div class="contents1"><img src="https://code-step.com/demo/html/media/img/feature1.jpg">
+          　<p class="text-category">category</p>
+            <p class="text-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            <p class="text-x">XXXX.XX.XX</p>
+          </div>
+
+          <div class="contents1"><img src="https://code-step.com/demo/html/media/img/feature2.jpg">
+            <p class="text-category">category</p>
+            <p class="text-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            <p class="text-x">XXXX.XX.XX</p>
+          </div>
+
+          <div class="contents1"><img src="https://code-step.com/demo/html/media/img/feature3.jpg">
+            <p class="text-category">category</p>
+            <p class="text-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            <p class="text-x">XXXX.XX.XX</p>
+          </div>
+
+        </div><!-- コンテンツ １列目　ここまで-->
+
+
+          <!-- コンテンツ 2列目--> <!--クラスに「fadeInUpTrigger」をつける事で、スクロール時にふわっと表示させる-->
+          <div class="contents-2nd">
+
+            <div class="contents1"><img src="https://code-step.com/demo/html/media/img/feature4.jpg">
+            　<p class="text-category">category</p>
+              <p class="text-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+              <p class="text-x">XXXX.XX.XX</p>
+            </div>
+
+            <div class="contents1"><img src="https://code-step.com/demo/html/media/img/feature5.jpg">
+              <p class="text-category">category</p>
+              <p class="text-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+              <p class="text-x">XXXX.XX.XX</p>
+            </div>
+
+            <div class="contents1"><img src="https://code-step.com/demo/html/media/img/feature6.jpg">
+              <p class="text-category">category</p>
+              <p class="text-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+              <p class="text-x">XXXX.XX.XX</p>
+            </div>
+
+          </div><!-- コンテンツ ２列目　ここまで-->
+
+
+          <!-- コンテンツ 3列目--> <!--クラスに「fadeInUpTrigger」をつける事で、スクロール時にふわっと表示させる-->
+          <div class="contents-3rd box fadeInUpTrigger">
+
+            <div class="contents1"><img src="https://code-step.com/demo/html/media/img/feature7.jpg">
+            　<p class="text-category">category</p>
+              <p class="text-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+              <p class="text-x">XXXX.XX.XX</p>
+            </div>
+
+            <div class="contents1"><img src="https://code-step.com/demo/html/media/img/feature8.jpg">
+              <p class="text-category">category</p>
+              <p class="text-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+              <p class="text-x">XXXX.XX.XX</p>
+            </div>
+
+            <div class="contents1"><img src="https://code-step.com/demo/html/media/img/feature9.jpg">
+              <p class="text-category">category</p>
+              <p class="text-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+              <p class="text-x">XXXX.XX.XX</p>
+            </div>
+
+          </div><!-- コンテンツ 3列目　ここまで-->
+
+      </main> <!-- メイン（動画〜コンテンツまで）　ここまで-->
+
+
+      <footer class="box fadeInUpTrigger"><!-- フッター（最後のお問い合わせ蘭）--> <!--クラスに「fadeInUpTrigger」をつける事で、スクロール時にふわっと表示させる-->
+
+        <h1 class="text-contact" id="jump-contact">CONTACT</h1>
+
+
+        <!-- フッター内の白文字（テキストテキスト... 〜　Message　まで）-->
+        <div class="text-alia-all">
+
+          <!-- テキスト「テキストテキスト...」-->
+          <ul class="text-alia">
+            <li class="text-taxt-white">テキストテキストテキスト</li>
+            <li class="text-taxt-white">テキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキスト</li>
+            <li class="text-taxt-white">テキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキスト</li>
+          </ul>
+
+          <!-- テキスト「テキストテキスト...」-->
+          <ul class="text-alia2">
+            <li class="text-taxt-white2"><p>Name:</p>
+              <input>
+            </li>
+            <li class="text-taxt-white2"><p>Mail:</p>
+              <input>
+            </li>
+            <li class="text-taxt-white2"><p>Message:</p>
+              <input>
+            </li>
+            <li class="input-buttan"><input class="buttan" type="submit" value="SEND"></li>
+          </ul>
+
+        </div><!-- /text-alia-all -->
+
+        <p class="c">© Sneakers</p>
+
+      </footer>
+
+    </div><!-- /settimeout Loading画面終了後に表示させる　ここまで-->
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!-- スライドを可能にするjQuery-->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+
+  <!-- 自作jqueryを読み込み -->
+  <script src="script.js"></script>
+
+  </body>
+
+</html>
